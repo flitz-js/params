@@ -2,7 +2,7 @@
 
 # @flitz/params
 
-> Extracts path parameters and makes them available in a [flitz](https://github.com/flitz-js/flitz) request..
+> Extracts path parameters and makes them available in a [flitz](https://github.com/flitz-js/flitz) request.
 
 ## Install
 
