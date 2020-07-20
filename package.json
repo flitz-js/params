@@ -1,6 +1,6 @@
 {
   "name": "@flitz/params",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Extracts path parameters and makes them available in a flitz request.",
   "private": false,
   "main": "lib/index.js",
@@ -49,7 +49,7 @@
     "eslint-plugin-jsdoc": "^30.0.0",
     "eslint-plugin-no-null": "^1.0.2",
     "eslint-plugin-unicorn": "^21.0.0",
-    "flitz": "0.4.0",
+    "flitz": "0.4.1",
     "ts-node-dev": "^1.0.0-pre.52",
     "tslint": "^6.1.2",
     "typescript": "^3.9.7"
