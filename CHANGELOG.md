@@ -1,6 +1,6 @@
 # @flitz/params
 
-## 0.2.0
+## 0.2.1
 
 * update donation links to [open collective](https://opencollective.com/flitz) and [PayPal](https://paypal.me/MarcelKloubert)
 

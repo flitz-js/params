@@ -1,6 +1,6 @@
 {
   "name": "@flitz/params",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Extracts path parameters and makes them available in a flitz request.",
   "private": false,
   "main": "lib/index.js",
