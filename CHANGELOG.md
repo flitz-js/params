@@ -1,5 +1,9 @@
 # @flitz/params
 
+## 1.0.0
+
+* first stable release
+
 ## 0.2.1
 
 * update donation links to [open collective](https://opencollective.com/flitz) and [PayPal](https://paypal.me/MarcelKloubert)

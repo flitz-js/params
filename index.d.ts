@@ -21,7 +21,7 @@
 import flitz from 'flitz';
 
 declare module 'flitz' {
-  interface Request {
+  export interface Request {
     /**
      * List of path parameters, if parsed.
      */
