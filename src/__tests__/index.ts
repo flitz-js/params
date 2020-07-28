@@ -53,7 +53,7 @@ it('should have 2 parameter (genre and title) be submitted', async () => {
   expect(paramList.title).toBe('It');
 });
 
-it('should have none parameter be submitted', async () => {
+it('should return 404', async () => {
   const app = global.createTestApp();
 
   app.get(params('/books/:genre/:title?'), async (req, res) => {
@@ -61,20 +61,9 @@ it('should have none parameter be submitted', async () => {
     res.end();
   });
 
-  const response = await request(app)
+  await request(app)
     .get('/books')
     .parse(global.parseBody)
     .send()
-    .expect(200);
-
-  const paramList = JSON.parse(
-    response.body.toString('utf8')
-  );
-
-  expect(typeof paramList).toBe('object');
-  expect(Object.keys(paramList)).toHaveLength(0);
-  expect(typeof paramList.genre).toBe('undefined');
-  expect(paramList.genre).toBe(undefined);
-  expect(typeof paramList.title).toBe('undefined');
-  expect(paramList.title).toBe(undefined);
+    .expect(404);
 });

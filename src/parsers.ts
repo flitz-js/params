@@ -19,14 +19,12 @@
 // SOFTWARE.
 
 import { Request, RequestPathValidator } from 'flitz';
-const { exec, match, parse } = require('matchit');
+const regexparam = require('regexparam');
 
-interface MatchItem {
-  end: string;
-  old: string;
-  type: string;
-  val: string;
-};
+interface RegexParamResult {
+  keys: string[];
+  pattern: RegExp;
+}
 
 /**
  * Creates a new path validator that extracts parameters
@@ -36,13 +34,13 @@ interface MatchItem {
  * @returns {RequestPathValidator} The new path validator.
  */
 export function params(path: string): RequestPathValidator {
-  const route: any[] = parse(path);
+  const result: RegexParamResult = regexparam(path);
 
   return (req: Request) => {
     try {
-      const matchList: MatchItem[] = match(req.url, [route]);
-      if (matchList.length) {
-        req.params = exec(req.url, matchList);
+      const params = exec(req.url!, result);
+      if (params) {
+        req.params = params;
 
         return true;
       }
@@ -50,4 +48,19 @@ export function params(path: string): RequestPathValidator {
 
     return false;
   };
+}
+
+function exec(path: string, result: RegexParamResult) {
+  const paramList: any = {};
+
+  const matches = result.pattern.exec(path);
+  if (!matches) {
+    return null;
+  }
+
+  for (let i = 0; i < result.keys.length; i++) {
+    paramList[result.keys[i]] = matches[i + 1];
+  }
+
+  return paramList;
 }

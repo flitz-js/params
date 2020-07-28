@@ -64,7 +64,7 @@ TypeScript is optionally supported. The module contains its own [definition file
 
 The module makes use of:
 
-* [matchit](https://github.com/lukeed/matchit) by [Luke Edwards](https://github.com/lukeed)
+* [regexparam](https://github.com/lukeed/regexparam) by [Luke Edwards](https://github.com/lukeed)
 
 ## License
 
