@@ -1,5 +1,9 @@
 # @flitz/params
 
+## 2.1.0
+
+* cleanup package
+
 ## 2.0.1
 
 * BREAKING CHANGE: replaced [matchit](https://github.com/lukeed/matchit) with [regexparam](https://github.com/lukeed/regexparam)
